@@ -25,6 +25,7 @@ class HomepageTests(SimpleTestCase):
             HomePageView.as_view().__name__
         )
 
+
 class AboutpageTests(SimpleTestCase):
     def setUp(self):
         url = reverse('about')
