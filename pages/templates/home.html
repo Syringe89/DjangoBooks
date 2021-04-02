@@ -12,7 +12,8 @@
     <p><a href="{% url 'account_logout' %}">Logout</a></p>
 {% else %}
     <p>You are not logged in</p>
-    <a href="{% provider_login_url 'google' %}">Login</a>
+    <p><a href="{% url 'account_login' %}">Login</a></p>
+    <p><a href="{% provider_login_url 'google' action='reauthenticate' %}">Login with google</a></p>
     <a href="{% url 'account_signup' %}">Signup</a>
 {% endif %}
 {% endblock%}

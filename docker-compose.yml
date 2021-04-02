@@ -4,6 +4,11 @@ services:
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=afdeftapgh+xr+83c2jypddvb0$yu@h%0wd1n=n=*xscz_li)k
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51IbTHTIY67iqYbQZPZHAsvLLbo5SaA6i3Xr5LZHSqdVk6P69DB61ie2pAZjXFGxEvkECioSPcqJcdNsqsL50lafe00krdYOAiE
+      - STRIPE_TEST_SECRET_KEY=sk_test_51IbTHTIY67iqYbQZBFC9f84BmE4x4ZLNuqxqeEFx9ns7FFJjtnnbMKNjHFlKs1oUuu9Pq4Ty9JSqWSwDeb1XfCoP00bq1Zhff7
+      - DEBUG=1
     volumes:
       - .:/code
     ports:
@@ -17,6 +22,8 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    ports:
+    - "5432:5432"
 volumes:
   postgres_data:
 
